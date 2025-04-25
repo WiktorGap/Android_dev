@@ -139,10 +139,10 @@ fun DiceApp(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
-            if (numOfDice < 1 || numOfDice > 7) {
+            if (numOfDice < 1 || numOfDice > 5) {
                 Toast.makeText(context, "Podaj liczbę od 1 do 5", Toast.LENGTH_SHORT).show()
             } else {
-                diceResultsCopy = diceResults.toMutableList() // Zapisujemy poprzednie losowanie
+                diceResultsCopy = diceResults.toMutableList()
                 diceResults = if (toggleSameDice) {
                     val firstValue = diceMaxValues.firstOrNull()
                     val randomValue = if (firstValue != null) (1..firstValue).random() else 1
